@@ -31,6 +31,15 @@
         
     };
 
+    typedef struct funcionarios FUNCIONARIOS;
+    struct funcionarios {
+
+        char nome [100];
+        char telefone [15];
+        int salario;
+         
+    };
+
     void cabecalho();
     void clientes();
     void listar();
@@ -223,7 +232,6 @@ void clientes(){
             fclose(arquivo);
 
         }
-        
 
     }
 
@@ -763,15 +771,9 @@ void financeiro(){
 
             cabecalho();
 
-            int op;
             float pagamento;
 
-                printf("\t\t\t\t\t       [1] ARMAZEM | [2] FUNCIONARIOS\n");
-                printf("\t\t\t\t\t\t            ");scanf("%d", &op);
-
-                if(op == 1){
-
-                    printf("INFORME O PAGAMENTO: ");
+                    printf("\t\t\t\t            INFORME O PAGAMENTO: ");
                     scanf("%f", &pagamento);
 
                     if(pagamento <= 0){
@@ -821,7 +823,7 @@ void financeiro(){
                     fprintf(arquivo, "%.2f", valor);
 
                     fclose(arquivo);
-                }
+                
                 break;
 
                 case 3: ;
